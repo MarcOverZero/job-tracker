@@ -1,0 +1,9 @@
+<h2>Post a Comment </h2>
+
+<%= form_for [@company, @job, @comment] do |f| %>
+  <p>
+  <%= f.label "Comments" %>
+  <%= f.text_area :notes %>
+  </p>
+  <%= f.submit %>
+<% end %>

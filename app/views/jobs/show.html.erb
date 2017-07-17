@@ -1,0 +1,26 @@
+Title: <%= @job.title %>
+<br>
+
+Description: <%= @job.description %>
+<br>
+
+Level of Interest: <%= @job.level_of_interest %>
+<br>
+
+City: <%= @job.city %>
+<br>
+
+Company: <%= link_to @job.company.name, company_path(@job.company) %>
+
+Category: <%= @job.category.nil? ? "(no category assigned)" :  @job.category.title %>
+
+<br>
+
+<%= link_to "Edit", edit_company_job_path(@job.company.id, @job.id) %>
+<%= link_to "Delete", company_job_path(@job.company.id, @job.id), method: :delete %>
+
+
+
+<h2>Comments (<%= @job.comments.size %>)</h2>
+<%= render partial: 'jobs/comment', collection: @job.comments.reverse %>
+<%= render partial: 'comments/form' %>

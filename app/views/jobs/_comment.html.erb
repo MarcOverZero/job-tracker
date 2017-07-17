@@ -1,0 +1,9 @@
+<p> Comments about job:<p>
+<ul>
+  <% jobz = @job.comments.sort_by {|comment| comment.created_at} %>
+  <% jobz.reverse.each do |comment| %>
+  <li><%= comment.notes %></li></br>
+  <%=time_ago_in_words(comment.created_at)  %> ago
+</br>
+  <% end %>
+</ul>

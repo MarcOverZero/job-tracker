@@ -1,0 +1,7 @@
+<h3>All jobs within:  <strong><%= @category.title %></strong>:</h3>
+
+<ul>
+<% @category.jobs.each do |job| %>
+  <li> <%= job.title  %></li>
+  </ul>
+  <% end %>
